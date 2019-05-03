@@ -46,7 +46,8 @@
     padding: 50px 60px;
     display: flex;
     justify-content: center;
-
+    .MediaTablet({flex-direction: column;align-items: center;});
+    .MediaTablet({width: 100%;})
     .walk-text {
       width: 50%;
 
@@ -61,11 +62,14 @@
     }
 
     .walk-img {
-      width: 46%;
+      .MediaTablet({order:-1;
+      width: 100%;});
+        width: 46%;
       margin-left: 4%;
 
 
       img {
+
         width: 100%;
         height: auto;
         border-radius: 10px;
@@ -84,6 +88,7 @@
   font-size: 20px;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
+  .MediaTablet({width: 100%;})
 }
 
 .btn:hover {
