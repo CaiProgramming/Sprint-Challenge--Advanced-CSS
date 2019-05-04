@@ -1,1 +1,43 @@
-// Mixins Here
+// Mixins in here
+.flexbase(){
+  display: flex;
+  align-items: baseline;
+  flex-wrap: nowrap;
+}
+.MediaTablet(@rules){
+  @media @tablet-down {@rules();}
+}
+.MediaPhone(@rules){
+  @media @phone-down {@rules();}
+}
+.MediaSmPhone(@rules){
+  @media @small-phone-down {@rules();}
+}
+.mediaflex(){
+  .MediaTablet({
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+    });
+}
+.button(@background, @color: white){
+    padding: 10px;
+    border-radius: 100px;
+
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-decoration: none;
+
+    transition: all 5000ms ease;
+
+    background: @background;
+    color: @color;
+
+    &:hover, &:focus {
+        background: lighten(@background, 25%); // We'll cover this in the next lesson. Just to tease this out
+        color: darken(@color, 25%);
+        cursor:pointer;
+
+    }
+}
